@@ -1,52 +1,82 @@
-# Data Color Picker - Charts Color Generator
+# Recharts Styling Studio
 
-A modern web application for generating visually-equidistant color schemes for data visualizations, charts, and dashboards. Built with React and using perceptually uniform color interpolation.
+A professional chart customization tool for designing beautiful, export-ready [Recharts](https://recharts.org/) charts with complete control over styling. Built with React, Tailwind CSS, and Recharts.
 
 ## Features
 
-### 🎨 Four Generation Modes
+### 📊 Six Chart Types
 
-1. **Palette Generator** - Create multi-hue palettes for categorical data
-   - Perfect for pie charts, bar charts, and maps
-   - Customize start and end colors
-   - Generate 2-20 visually distinct colors
+- **Bar Chart** — standard grouped bars
+- **Stacked Bar Chart** — stacked series comparison
+- **Line Chart** — with customizable dot shapes, line types, and stroke width
+- **Area Chart** — stacked areas with fill opacity control
+- **Pie Chart** — with percentage labels and per-slice colors
+- **Waterfall Chart** — configurable sales/costs with auto-calculated totals
 
-2. **Single Hue Scale** - Sequential color scales for single variables
-   - Ideal for heatmaps and choropleth maps
-   - Control brightness and color intensity
-   - Transition to gray or white endpoints
+### 🎛️ Nine Style Control Tabs
 
-3. **Divergent Scale** - Bipolar color scales with neutral midpoint
-   - Great for political maps, temperature data
-   - Customize midpoint color properties
-   - Smooth transition from one extreme to another
+| Tab | What you can customize |
+|-----|----------------------|
+| **Chart Type** | Select chart type, manage data series (add/remove/rename/toggle visibility), configure waterfall parameters |
+| **Colors** | Color palette (up to 10), background color, Tailwind color presets & custom shade builder, color palette import, even distribution toggle, per-series color assignment |
+| **Dimensions** | Chart width, height, and margin (top/right/bottom/left) |
+| **Typography** | Font family (9 options), font size, font weight, text color |
+| **Grid & Axes** | Grid visibility, color, dash pattern, opacity; axis color and width |
+| **Elements** | Line type (linear/monotone/natural/step), stroke width, fill opacity, bar roundness, dot radius & shape |
+| **Legend** | Visibility, horizontal/vertical alignment, icon type (9 options), spacing/margin |
+| **Tooltip** | Visibility, background, border, opacity; hover cursor fill color and opacity |
+| **Animation** | Duration and easing function |
 
-4. **Random Palette** - Quick random color generation
-   - Uses golden ratio for optimal hue distribution
-   - Perfect for prototyping and inspiration
-   - One-click regeneration
+### 🎨 Color System
 
-### ✨ Key Features
+- **Manual Color Picker** — hex input with visual picker for each palette slot
+- **Tailwind Color Presets** — one-click curated palettes from Tailwind's color system
+- **Custom Tailwind Shade Builder** — pick individual shades across color families to build a palette
+- **Color Palette Import** — paste hex/RGB/JSON, upload a file, or import from a previously generated palette
+- **Even Distribution** — automatically assigns palette colors to maximize visual distinction between series
+- **Per-Series Assignment** — manually map any palette color to any data series
+- **Tailwind Class Export** — auto-generates `text-`, `bg-`, and `border-` utility classes for your palette
 
-- **Perceptually Uniform Colors** - Uses LAB color space for true visual equidistance
-- **Live Preview** - See changes in real-time
-- **Easy Export** - Copy HEX values or download as SVG
-- **Responsive Design** - Works on desktop, tablet, and mobile
-- **Modern UI** - Clean, intuitive interface built with Tailwind CSS
+### 📂 Custom Data Input
+
+- **Paste** CSV or JSON directly into the app
+- **Upload** CSV, JSON, or Excel (`.xlsx` / `.xls`) files
+- Context-aware format examples for each chart type (standard, pie, waterfall)
+
+### 💾 Save & Load Configurations
+
+- Save named configurations to browser localStorage
+- Load, rename, update, overwrite, or delete saved configs
+- Loaded config name carries through to export filenames
+
+### 📤 Export Options
+
+- **JSON** — full configuration object for programmatic use
+- **React** — ready-to-use Recharts component code (includes custom dot renderers when needed)
+- **CSS Variables** — complete set of `--chart-*` custom properties for theming
+- **SVG Download** — export the live preview chart directly as an SVG file
+- Copy to clipboard or download as a file
+
+### 👁️ Live Preview
+
+- Sticky chart preview that stays visible while you adjust settings
+- Real-time updates as you change any style control
 
 ## Technology Stack
 
-- **React 18** - Modern UI framework
-- **Vite** - Fast build tool and dev server
-- **Tailwind CSS** - Utility-first styling
-- **chroma.js** - Advanced color manipulation and interpolation
-- **Lucide React** - Beautiful icons
+- **React 18** — UI framework
+- **Recharts** — composable charting library
+- **Vite** — build tool and dev server
+- **Tailwind CSS** — utility-first styling
+- **chroma.js** — color manipulation (waterfall chart contrast, color utilities)
+- **SheetJS (xlsx)** — Excel file parsing
+- **Lucide React** — icons
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 16+ and npm/yarn
+- Node.js 16+ and npm
 
 ### Installation
 
@@ -55,7 +85,7 @@ A modern web application for generating visually-equidistant color schemes for d
 npm install
 ```
 
-2. Start development server:
+2. Start the development server:
 ```bash
 npm run dev
 ```
@@ -70,41 +100,6 @@ npm run build
 
 The built files will be in the `dist` directory.
 
-## How It Works
-
-The app uses **perceptually uniform color spaces** (LAB/LCH) instead of RGB for color interpolation. This ensures that:
-
-- Colors are visually equidistant (not just mathematically)
-- No muddy middle colors in gradients
-- Better contrast and distinguishability
-- Accessible color choices for data visualization
-
-## Usage Tips
-
-### Palette Generator
-- Choose very different endpoint colors (warm vs cool, bright vs dark)
-- Don't be afraid to adjust brand colors slightly for better results
-- Hue matters more than exact saturation/brightness for brand recognition
-
-### Single Hue Scale
-- Set Color Intensity to 0% for gray endpoint
-- Set Brightness to 100% and Intensity to 0% for white endpoint
-- Darker colors typically represent higher values
-
-### Divergent Scale
-- Keep Color Intensity low when endpoints are very different
-- Use odd numbers of steps to have a clear midpoint
-- Best for showing transitions through a neutral middle value
-
-### Random Palette
-- Click "Generate" multiple times to explore options
-- Use as starting point, then fine-tune in Palette mode
-- Great for discovering unexpected color combinations
-
 ## License
 
 MIT
-
-## Acknowledgments
-
-Inspired by [LearnUI Design's Data Color Picker](https://www.learnui.design/tools/data-color-picker.html)
