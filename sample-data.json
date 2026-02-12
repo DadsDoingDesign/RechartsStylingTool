@@ -1,0 +1,7 @@
+[
+  {"name": "Product A", "value1": 12000, "value2": 8000, "value3": 5000},
+  {"name": "Product B", "value1": 15000, "value2": 11000, "value3": 7000},
+  {"name": "Product C", "value1": 9000, "value2": 7500, "value3": 4500},
+  {"name": "Product D", "value1": 18000, "value2": 13000, "value3": 9000},
+  {"name": "Product E", "value1": 11000, "value2": 9500, "value3": 6500}
+]

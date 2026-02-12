@@ -1,0 +1,7 @@
+[
+  {"name": "Mobile", "value": 4500},
+  {"name": "Desktop", "value": 3200},
+  {"name": "Tablet", "value": 1800},
+  {"name": "Smart TV", "value": 900},
+  {"name": "Other", "value": 600}
+]
